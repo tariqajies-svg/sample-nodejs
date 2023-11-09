@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  Maintenance:
+  deploy:
     runs-on: [self-hosted, linux, x64]
     steps:
       - name: Checkout the code
