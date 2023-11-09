@@ -1,21 +1,16 @@
-name: PROD Deployment updated
-
+name: M2 PROD Deployment updated
+ 
 on:
   push:
-    branches: [main]
-
+    branches: [ upgraded_main ]
+ 
 jobs:
-  deploy:
-    runs-on: [self-hosted, linux, x64]
-    steps:
-      - name: Checkout the code
-        uses: actions/checkout@v2
-        with:
-          path: /home/ubuntu/git/sample-node-project
 
-      - name: Install dependencies and start
-        working-directory: /home/ubuntu/git/sample-node-project
-        run: |
-          npm install
-          npm start
-
+  Clone:
+    needs: Maintenance
+    runs-on: [self-hosted, linux, x64, Live]
+    steps:    
+    - name: Pull the branch
+      working-directory: /home/ubuntu/git/sample-node-project
+      run: |
+        git pull origin main
