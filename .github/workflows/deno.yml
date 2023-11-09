@@ -1,16 +1,21 @@
 name: PROD Deployment updated
- 
+
 on:
   push:
-    branches: [ main ]
- 
+    branches: [main]
+
 jobs:
-  Maintenance :
-      runs-on: [self-hosted, linux, x64]
-      steps:
-      - uses: actions/checkout@v2
-      - name: Pull the branch
+  Maintenance:
+    runs-on: [self-hosted, linux, x64]
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+        with:
+          path: /home/ubuntu/git/sample-node-project
+
+      - name: Install dependencies and start
         working-directory: /home/ubuntu/git/sample-node-project
         run: |
-          su ubuntu -c "npm install && npm start" 
- 
+          npm install
+          npm start
+
