@@ -6,7 +6,7 @@ on:
 
 jobs:
   Maintenance :
-      runs-on: [self-hosted, linux, x64, Live]
+      runs-on: [self-hosted, linux, x64, prod]
       steps:
       - uses: actions/checkout@v2
       - name: git clone
