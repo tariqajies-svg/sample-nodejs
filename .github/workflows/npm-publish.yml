@@ -15,4 +15,4 @@ jobs:
           git clone git@github.com:tariqajies-svg/sample-nodejs.git
           cd sample-nodejs
           npm install
-          npm start 
+          npm start --no-interactive & 
