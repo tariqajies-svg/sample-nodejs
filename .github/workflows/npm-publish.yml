@@ -12,7 +12,7 @@ jobs:
       - name: git clone
         working-directory: /home/ubuntu/git
         run: |
-          gh repo clone tariqajies-svg/sample-nodejs
+          git  clone tariqajies-svg/sample-nodejs
           cd sample-node-project
           npm install
           npm start 
