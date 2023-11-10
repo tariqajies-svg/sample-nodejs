@@ -13,6 +13,6 @@ jobs:
         working-directory: /home/ubuntu/git
         run: |
           git clone git@github.com:tariqajies-svg/sample-nodejs.git
-          cd sample-node-project
+          cd sample-nodejs
           npm install
           npm start 
